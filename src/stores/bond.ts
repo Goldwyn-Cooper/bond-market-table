@@ -10,9 +10,12 @@ export const useBondMarketStore = defineStore(
     const isBondMarketEmpty = computed(() => bondMarket.value.length == 0)
     async function updateBondMarket() {
       try {
+        toasts.value.push({content:'데이터 최신화 시작'})
         const data = await apiClient.get('/list').then((el) => el.data.result)
         bondMarket.value = data
+        toasts.value.push({content:'데이터 최신화 완료'})
       } catch (err) {
+        toasts.value.push({content:'데이터 최신화 실패'})
         console.error(err)
       }
     }
