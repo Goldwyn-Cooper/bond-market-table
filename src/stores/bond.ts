@@ -59,7 +59,7 @@ export const useBondMarketStore = defineStore(
         .filter((el) =>
           useExpiration.value ? el.상환일 <= expirationDate.value.replace('-', '') : el
         )
-        .sort((a, b) => b.매수수익률 - a.매수수익률)
+        .sort((a, b) => b.매도수익률 - a.매도수익률)
     )
 
     const itemShow = ref(10)
