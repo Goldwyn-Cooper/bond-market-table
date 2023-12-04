@@ -38,7 +38,7 @@ export const useBondMarketStore = defineStore(
         // 회사채
         .filter((el) => el.상품구분.includes('회사채'))
         // 수익률
-        .filter((el) => el.매수수익률 >= +targetEarning.value / (afterTax.value ? 1 - 0.154 : 1))
+        .filter((el) => el.매도수익률 >= +targetEarning.value / (afterTax.value ? 1 - 0.154 : 1))
         // 신용도
         .filter(
           (el) =>
