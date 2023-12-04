@@ -16,6 +16,6 @@ const { moreItems, updateBondMarket } = bondMarketStore
 const { tableItems, itemShow } = storeToRefs(bondMarketStore)
 // Components
 import { CTable, CButton, CButtonGroup } from '@coreui/vue'
-const columns = ['종목명', '신용도', '매수수익률']
+const columns = ['종목명', '신용도', '매도수익률']
 const items = computed(() => tableItems.value.slice(0, itemShow.value))
 </script>
